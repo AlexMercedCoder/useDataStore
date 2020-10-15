@@ -17,13 +17,11 @@ npm install --save usedatastore
 Create a DS.js in your src folder and do the following
 
 ```js
-import createDataStore from 'usedatastore'
+const createDataStore = require('usedatastore')
 
 // Define and initialState and Reducer
 
-const [DataStore, useDataStore] = createDataStore(initialState, reducer)
-
-export default { DataStore, useDataStore }
+export const [DataStore, useDataStore] = createDataStore(initialState, reducer)
 ```
 
 ### Wrap Your App Components with DataStore
