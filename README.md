@@ -14,7 +14,7 @@ npm install --save usedatastore
 
 ### Step 1 - Initialize
 
-Create a DS.js in your src folder and do the following
+Create `DS.js` in your src folder and add the following
 
 ```js
 const createDataStore = require('usedatastore')
@@ -28,26 +28,36 @@ export const [DataStore, useDataStore] = createDataStore(initialState, reducer)
 
 ```tsx
 // App.jsx
-import React, { Component } from 'react'
-import {DataStore} from "./DS.js
+import React from 'react'
+import { DataStore } from './DS'
 
 const App = (props) => {
-  return <DataStore><OtherComponent/></DataStore>
+  return (
+    <DataStore>
+      <OtherComponent />
+    </DataStore>
+  )
 }
 ```
 
 ### Pull data using hook in any component
 
 ```tsx
-// /components/component.jsx
-import React from "react'
-import {useDataStore} from "../DS.js"
+// /components/Component.jsx
+import React from 'react'
+import { useDataStore } from '../DS'
 
 const Component = (props) => {
-  const {dataStore, dispatch} = useDataStore()
+  const { dataStore, dispatch } = useDataStore()
 
-  return <><h1>{dataStore.title}</h1>
-  <button onClick={() => dispatch({type:"something", payload: 5})}>Click Me</button>
+  return (
+    <>
+      <h1>{dataStore.title}</h1>
+      <button onClick={() => dispatch({ type: 'something', payload: 5 })}>
+        Click Me
+      </button>
+    </>
+  )
 }
 ```
 
