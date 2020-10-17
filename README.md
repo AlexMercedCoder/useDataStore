@@ -17,7 +17,7 @@ npm install --save usedatastore
 Create a DS.js in your src folder and do the following
 
 ```js
-const createDataStore = require('usedatastore')
+import {createDataStore} from "usedatastore"
 
 // Define and initialState and Reducer
 
